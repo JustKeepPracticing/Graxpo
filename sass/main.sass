@@ -1,0 +1,1201 @@
+@import "base/typography"
+@import 'helpers/variables'
+@import "helpers/mixins"
+@import "modules/navigation"
+//@import "bootstrap-sass-3.3.7/assets/stylesheets/bootstrap-sprockets"
+@import "bootstrap-sass-3.3.7/assets/stylesheets/bootstrap"
+@import "helpers/_pseudo-helpers"
+@import "base/font-awesome-4.7.0/scss/font-awesome.scss"
+//@import "base/bourbon"
+
+    //color: mix($blackish, $primaryRed) that's how we mix colors babe
+
+
+//
+// header
+header
+  background-image: url(../pics/header-background.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  @media only screen and (max-width : 768px)
+    background-size: contain
+  .logo
+    display: inline-block
+    padding: 58px 0 0 99px
+    @media only screen and (max-width : 768px)
+      padding: 58px 0 0 30px
+
+  .mouse-scroling
+    padding-top: 397px
+    @media only screen and (max-width : 768px)
+      padding-top: 61px
+
+.mobile-menu
+  @extend .menu
+  display: none
+
+.menu
+  @media only screen and (max-width : 768px)
+    padding: 61px 35px 0 0
+  @media only screen and (max-width : 480px)
+    display: none
+.intro-part
+  padding-top: 370px
+  @media only screen and (max-width : 768px)
+    padding-top: 79px
+  p
+    &:first-of-type
+      font-size: $biggestFont
+      @include letter-space (1.5px)
+    &:last-of-type
+      font-size: $secondaryFontSize
+      color: $primaryGrey
+      @include letter-space (5px)
+  a
+    margin: 15px 0 55px 0
+    display: inline-block
+    font-size: $smallestFont
+    text-decoration: none
+    color: $primaryRed
+    cursor: pointer
+
+
+//
+//
+// about section
+.about
+  background-color: $primary-bgcolor
+  padding-top: 113px
+  //padding-bottom: 120px // change it later or remove
+
+  p
+    color: $primaryGrey
+    font-size: $primaryFontSize
+    font-family: $font-family-primary
+    @include line-height(1.786)
+    br
+      @media only screen and (max-width : 768px)
+        display: none
+  a
+    display: block
+    width: 161px
+    height: 43px
+    font-size: $secondaryFontSize
+    font-family: $font-roboto-light
+    @include border-radius(5px)
+    background-color: $primaryRed
+    color: $regular-white
+    @include line-height(43px)
+    cursor: pointer
+    margin-top: 45px
+    &:hover
+      text-decoration: none
+      background-color: $red-darker
+      @include transform-translateY(-3px)
+      transition: .1s ease-in-out
+    @media only screen and (max-width : 480px)
+      margin-bottom: 20px
+
+
+.h4-template
+  color: $blackish
+  font-size: $mediumFont
+  position: relative
+  margin-bottom: 66px
+  font-family: $font-family-secondary
+  @include letter-space(3px)
+  &:before
+    @extend %pseudo-block
+    top: 50px
+
+.browser-screenshot
+  background-image: url(../pics/browser-screenshot.png)
+  background-repeat: no-repeat
+  height: 325px
+
+
+//
+  service section
+
+.service
+  background-color: $primary-bgcolor
+  padding-top: 125px
+  padding-bottom: 98px
+  h4
+    @extend .h4-template
+    &:before
+      @extend %pseudo-block
+      margin-left: 50px
+
+.short-description
+  font-family: $font-family-primary
+  font-size:  $primaryFontSize
+  color: $primaryGrey
+  margin-bottom: 62px
+  @include line-height(25px)
+  @media only screen and (max-width : 480px)
+    br
+      display: none
+
+
+
+
+.design-box
+  border: 3px solid #EBEBEB
+  @include border-radius(5px)
+  padding: 26px 26px 49px 30px
+  .design_icon
+    float: left
+    font-size: 24.168px
+    width: 107px
+    height: 107px
+    text-align: center
+    @include line-height(107px)
+    color: $regular-white
+    background-color: $primaryRed
+    margin-right: 27px
+    @include border-radius(50%)
+  p
+    font-size: $primaryFontSize
+    font-family: $font-family-primary
+    color: $primaryGrey
+    margin-top: 58px
+  h5
+    font-family: $font-roboto-bold
+    font-size: 16px
+    color: $primaryGrey
+    position: relative
+    &:before
+      @extend %pseudo-block
+      background-color: #D7D7D7
+  &:hover
+    background-color: $primaryRed
+    @include border-radius(5px)
+    border: none
+    .design_icon
+      background-color: $regular-white
+      color: $primaryRed
+    p
+      color: $regular-white
+    h5
+      color: $regular-white
+      &:before
+        background-color: $regular-white
+
+.text-box
+  overflow: hidden
+
+.branding-box
+  @extend .design-box
+.app-design-box
+  @extend .design-box
+.print-design-box
+  @extend .design-box
+
+.branding_icon
+  @extend .design_icon
+.print_icon
+  @extend .design_icon
+.app_icon
+  @extend .design_icon
+  font-size: 27.93px !important
+
+.desktop-margin
+  margin-bottom: 34px
+
+
+// social-info section
+
+.social-info
+  background-image: url(../pics/social-info-bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative
+  height: 368px
+  color: $regular-white
+  p
+    font-family: $font-roboto-regular
+    font-size: 16px
+    margin-top: 38px
+    position: relative
+    @include letter-space(0.6px)
+    @media only screen and (max-width : 768px)
+      margin-top: 10px
+    @media only screen and (max-width : 480px)
+      font-size: 14px
+    &:before
+      @extend %pseudo-block
+      background-color: $regular-white
+      @media only screen and (max-width : 768px)
+        top: calc(50px / 2)
+
+.margin-bottom
+  margin-bottom: 40px
+
+.info-in-numbers
+  i
+    font-size: 40.32px
+    margin-right: 18px
+    @media only screen and (max-width : 480px)
+      font-size: 28px
+  span
+    font-size: 30.24px
+    font-family: $font-roboto-regular
+    @media only screen and (max-width : 480px)
+      font-size: 20px
+
+.center-box
+  text-align: center
+  padding-top: 125px
+  @media only screen and (max-width : 768px)
+    padding-top: 65px
+  @media only screen and (max-width : 480px)
+    padding-top: 96px
+
+// stepping section
+
+.stepping .row .col-md-4:last-child .circle
+  &:before
+    content: none
+
+.stepping
+  background-color: $primary-bgcolor
+  padding-top: 92px
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 107px
+  p
+    @extend .short-description
+
+.centering-helper
+  text-align: center
+  h5
+    font-size: $secondaryFontSize
+    font-family: $font-roboto-regular
+    color: $blackish
+    margin: 31px 0 35px 0
+
+.circle
+  width: 100px
+  height: 100px
+  margin: 0 auto
+  @include border-radius(50%)
+  border: 1px solid $circle-color
+  position: relative
+  padding: 8px
+  &:before
+    @extend %pseudo-block
+    width: 290px
+    height: 1px
+    margin-left: 50px
+    background-color: $circle-color
+    @media only screen and (max-width : 768px)
+      content: none
+  span
+    position: absolute
+    background-color: $circle-bg-color
+    display: block
+    font-size: 45px
+    color: $primaryRed
+    width: 82px
+    height: 82px
+    @include border-radius(50%)
+    text-align: center
+    @include line-height(82px)
+
+
+// featured-work section
+
+
+.featured-work
+  background-color: $light-grey-bgcolor
+  padding-top: 90px
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 107px
+  p
+    @extend .short-description
+
+.flex-boxes
+  display: flex
+  justify-content: center
+  align-items: center
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+  //justify-content: space-around
+
+.box-01
+  background-image: url(../pics/portfolio-coffee_shop.png)
+  background-repeat: no-repeat
+  width: 455px
+  height: 318px
+  padding: 18px 16px 14px 15px
+  &:hover .hover-box
+    display: block
+
+.box-02
+  @extend .box-01
+  background-image: url(../pics/portfolio-thanks.png)
+  @media only screen and (max-width : 480px)
+    margin: 20px 0 20px 0
+
+
+.box-03
+  @extend .box-01
+  background-image: url(../pics/portfolio-cate_madison.png)
+
+.hover-box
+  display: none
+  background-color: $primaryRed
+  text-align: center
+  @include line-height(318px)
+  width: 419px
+  height: 284px
+  opacity: .8
+  a
+    border: 1px solid $regular-white
+    @include border-radius(8px)
+    color: $regular-white
+    padding: 14px 20px 12px 20px
+    font-size: $primaryFontSize
+    font-family: $font-family-primary
+    @include letter-space(1px)
+    &:hover
+      text-decoration: none
+
+// best-services section
+
+.best-services
+  background-color: $light-grey-bgcolor
+  padding-top: 92px
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 88px
+  p
+    @extend .short-description
+
+// service-details section
+
+.service-details
+  background-color: $primaryRed
+  color: $regular-white
+  h5
+    font-size: $secondaryFontSize
+    font-family: $font-family-secondary
+    position: relative
+    margin-top: 100px
+    @include letter-space(2px)
+    &:before
+      @extend %pseudo-block
+      background-color: #D7D7D7
+      top: 35px
+    @media only screen and (max-width : 768px)
+      margin-top: 50px
+  p
+    font-size: $primaryFontSize
+    font-family: $font-family-primary
+    margin-top: 50px
+    @include line-height(1.786)
+    @media only screen and (max-width : 480px)
+      br
+        display: none
+
+.service-img01
+  background-image: url(../pics/services-FirstPic.png)
+  background-repeat: no-repeat
+  width: 524px
+  height: 334px
+
+.service-img02
+  @extend .service-img01
+  background-image: url(../pics/services-SecondPic.png)
+  @media only screen and (max-width : 480px)
+    margin-bottom: 15px
+
+.service-img03
+  @extend .service-img01
+  background-image: url(../pics/services-ThirdPic.png)
+
+.extra-margin-left
+  margin-left: 99px
+
+
+// keep-exploring section
+
+.keep-exploring
+  background-image: url(../pics/keep_exploring_bg.png)
+  background-repeat: no-repeat
+  background-size: cover
+  height: 392px
+  overflow: hidden
+  color: $regular-white
+  padding-top: 111px
+  @media only screen and (max-width : 480px)
+    padding-top: 60px
+  h2
+    font-family: $font-roboto-light
+    font-size: $bigFont
+    @include letter-space(5px)
+    margin-bottom: 35px
+    @media only screen and (max-width : 768px)
+      font-size: 23px
+  h4
+    font-family: $font-roboto-light
+    font-size: $mediumFont
+    margin-bottom: 44px
+    @include letter-space(2px)
+  a
+    color: $regular-white
+    background-color: $primaryRed
+    padding: 20px
+    font-size: $secondaryFontSize
+    font-family: $font-family-primary
+    cursor: pointer
+    @include letter-space(1px)
+    @include border-radius(5px)
+    &:hover
+      color: $regular-white
+      text-decoration: none
+      @include box-shadow(0 0 5px 3px #828282)
+      transform: scale(1.2)
+      transition: 1s ease-out
+    &:focus
+      color: $regular-white
+      text-decoration: none
+
+// portfolio section
+
+.portfolio
+  background-color: $primary-bgcolor
+  padding: 103px 0 75px 0
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 42px
+  p
+    @extend .short-description
+
+.portfolio-menu
+  font-size: $secondaryFontSize
+  font-family: $font-family-primary
+  color: $blackish
+  margin-bottom: 75px
+  li
+    display: inline-block
+    position: relative
+    list-style: none
+    margin-right: 20px
+    &:first-child
+      &:before
+        @extend %pseudo-block
+        top: 30px
+    &:last-child
+      margin-right: 0
+    @media only screen and (max-width : 320px)
+      margin: 0 0 15px 0
+
+//
+// Animated Gallery
+
+.animated-gallery
+  counter-reset: grid-item
+  max-width: 1920px
+  column-count: 3
+  -webkit-column-count: 3
+  -moz-column-count: 3
+  column-gap: 0
+
+.grid-item
+  float: left
+  opacity: 0
+
+.item-o4
+  left: 0
+  top: 240px
+
+
+.grid-item.is-visible
+  animation: Items 600ms ease-in forwards
+
+#gallery
+  .item-o3
+    left: 895px
+    top: 0
+
+
+
+
+//@keyframes Items2
+//  0%
+//    opacity: 0
+//    height: 0
+//    padding: 0
+//
+//  100%
+//    opacity: 1
+
+
+@keyframes Items
+  0%
+    opacity: 0
+    transform: scale(0.2) rotateY(70deg)
+  60%
+    transform: scale(1.4)
+  90%
+    transform: scale(0.9)
+  100%
+    opacity: 1
+
+
+//
+//  subscribe section
+
+.subscribe
+  background-image: url(../pics/subscribe-bg.png)
+  background-repeat: no-repeat
+  background-size: cover
+  color: $regular-white
+  padding: 103px 0 83px 0
+  @media only screen and (max-width : 320px)
+    padding: 50px 0 50px 0
+  h4
+    color: $regular-white
+    font-family: $font-family-secondary
+    font-size: 18px
+    position: relative
+    margin-bottom: 42px
+    @include letter-space(2.5px)
+    @media only screen and (max-width : 768px)
+      text-align: center
+    &:before
+      @extend %pseudo-block
+      background-color: $regular-white
+      height: 1px
+      top: 32px
+  p
+    font-family: $font-family-primary
+    font-size: $smallFont
+    @include line-height(2)
+    @media only screen and (max-width : 768px)
+      text-align: center
+    @media only screen and (max-width : 320px)
+      br
+        display: none
+
+.subscribe-form
+  padding-top: 44px
+  @media only screen and (max-width : 768px)
+    text-align: center
+.input-group
+  display: inline-block
+  margin-right: 20px
+  position: relative
+  @media only screen and (max-width : 768px)
+    text-align: justify
+  input
+    &[type="email"]
+      opacity: 0.5
+      border: none
+      border-bottom: 2px solid $regular-white
+      background: none
+      color: $regular-white
+    &:focus
+      outline: none
+      + label
+        top: -10px
+        font-size: 9px
+        opacity: 0.7
+    &:active
+      outline: none
+  label
+    position: absolute
+    top: 40%
+    padding-left: 5px
+    @include transform-translateY(-40%)
+    font:
+      style: italic
+      family: $font-roboto-light
+      size: $smallestFont
+    pointer-events: none
+    transition: 0.3s ease
+    @include letter-space(1px)
+
+.has-value
+  + label
+    top: -10px
+    font-size: 9px
+
+.submit-btn
+  padding: 10px 16px
+  background-color: $regular-white
+  color: $primaryRed
+  outline: none
+  border: none
+  font-family: $font-family-secondary
+  opacity: 0.8
+  @include letter-space(1px)
+  &:hover
+    transform: scale(1.1)
+    transition: 1s ease-out
+  @media only screen and (max-width : 320px)
+    margin-top: 25px
+
+//
+// crew section
+
+.crew
+  padding: 100px 0 79px 0
+  background-color: $light-grey-bgcolor
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 73px
+    + p
+      @extend .short-description
+
+.crew-01
+  background-image: url(../pics/crew-01.png)
+  background-repeat: no-repeat
+  height: 352px
+  position: relative
+  @media only screen and (max-width : 768px)
+    background-position: center
+  //&:hover.animated-hover-box
+  //  animation: opacity 1s linear
+
+
+
+.crew-02
+  @extend .crew-01
+  background-image: url(../pics/crew-02.png)
+
+.crew-03
+  @extend .crew-01
+  background-image: url(../pics/crew-03.png)
+
+.crew-04
+  @extend .crew-01
+  background-image: url(../pics/crew-04.png)
+
+
+.animated-hover-box
+  background-color: $primaryRed
+  color: $regular-white
+  text-align: center
+  padding: 35px 0 18px 0
+  width: 245px
+  margin-left: 10px
+  position: absolute
+  bottom: 100px
+  display: none
+  @media only screen and (max-width : 768px)
+    margin-left: 50px
+  @media only screen and (max-width : 480px)
+    margin-left: 100px
+  @media only screen and (max-width : 320px)
+    margin-left: 24px
+  p
+    @include letter-space(1.3px)
+    @include line-height(1.818)
+    margin-bottom: 25px
+    font:
+      family: $font-roboto-light
+      size: $smallishFont
+  span
+    display: inline-block
+    width: 28px
+    height: 28px
+    text-align: center
+    cursor: pointer
+    @include line-height(28px)
+    font-size: 14.8px
+    @include border-radius(50%)
+    border: 1px solid $regular-white
+    &:first-of-type
+      margin-right: 10px
+    &:hover
+      background-color: $regular-white
+      color: $primaryRed
+
+//@keyframes opacity
+//  0%, 25%
+//    opacity: 0
+//  40%, 60%
+//    opacity: 0
+//  70%, 100%
+//    opacity: 1
+
+.crew-name
+  margin-top: 27px
+  p
+    color: $blackish
+    &:first-of-type
+      font:
+        family: $font-family-secondary
+        size: 17px
+    &:last-of-type
+      font:
+        family: $font-roboto-regular
+        size: $smallestFont
+
+
+//
+// testimonials section
+
+.testimonials
+  background-image: url(../pics/testimonials-bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  padding-bottom: 87px
+  padding-top: 92px
+  h4
+    @extend .h4-template
+    color: $regular-white
+    &:before
+      margin-left: 63px
+      background-color: $regular-white
+    + p
+      @extend .short-description
+      color: $regular-white
+      font-size: 18px
+      @include letter-space(4px)
+
+.client-pic
+  img
+    @include border-radius(50%)
+
+.testimonials-carousel
+  p
+    &:first-of-type
+      font-family: $font-sans-italic
+      color: $regular-white
+      font-size: $secondaryFontSize
+      @include line-height(1.875)
+      @include letter-space(2px)
+      margin-top: 42px
+      //margin-bottom: 46px
+    &:last-of-type
+      font-family: $font-family-secondary
+      font-size: $mediumFont
+      color: $primaryRed
+      @include letter-space(1.5px)
+      margin-top: 47px
+
+.indicators-box
+  position: relative
+  padding-bottom: 85px
+
+.testimonials-indicators
+  .active
+    background-color: $primaryRed
+    width: 8px
+    height: 8px
+    @include border-radius(50%)
+    margin: 0 9px 0 0
+  li
+    border: 1px solid $primaryRed
+    width: 8px
+    height: 8px
+    @include border-radius(50%)
+    margin: 0 9px 0 0
+
+
+  //
+  // blog section
+
+.blog
+  background-color: $primary-bgcolor
+  padding-top: 106px
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 65px
+    + p
+      @extend .short-description
+
+
+.news-01
+  background-image: url(../pics/blog-pic01.png)
+  background-repeat: no-repeat
+  height: 388px
+  @media only screen and (max-width : 768px)
+    background-position: center
+  @media only screen and (max-width : 480px)
+    margin-bottom: 20px
+
+
+
+.news-02
+  @extend .news-01
+  background-image: url(../pics/blog-pic02.png)
+
+.news-hover-box
+  background-color: $primaryRed
+  color: $regular-white
+  position: absolute
+  left: 284px
+  @media only screen and (max-width : 768px)
+    left: 414px
+  @media only screen and (max-width : 480px)
+    left: 179px
+  @media only screen and (max-width : 320px)
+    padding: 100px 10px 105px 13px
+    width: 219px
+    left: 86px
+  width: 286px
+  padding: 100px 42px 105px 23px
+  display: none
+  h5
+    font-size: $secondaryFontSize
+    font-family: $font-family-secondary
+  i
+    font-size: $secondaryFontSize
+  p
+    &:first-of-type
+      font-family: $font-roboto-light
+      font-size: $primaryFontSize
+      position: relative
+      margin-bottom: 52px
+      &:before
+        @extend %pseudo-block
+        background-color: $regular-white
+        top: 28px
+        height: 2px
+    &:last-of-type
+      font-size: $smallestFont
+      font-family: $font-family-primary
+      margin-bottom: 22px
+
+
+  //
+  // pricing section
+
+.pricing-tables
+  background-color: $primary-bgcolor
+  padding-top: 104px
+
+.pricing-description
+  @extend .h4-template
+  &:before
+    margin-left: 65px
+  + p
+    @extend .short-description
+
+.table-01
+  border: 1px solid #D7D7D7
+  @include border-radius(10px)
+  color: $primaryGrey
+  &:hover
+    box-shadow: 0 0 10px 4px #D5D5D5
+  h4
+    font-family: $font-family-secondary
+    font-size: $mediumFont
+    border-bottom: 1px solid #E1E1E1
+    padding: 35px 0 35px 0
+  a
+    color: $primaryGrey
+    font-family: $font-family-primary
+    font-size: $smallFont
+    border: 1px solid #D7D7D7
+    @include border-radius(5px)
+    padding: 10px 33px 10px 33px
+    margin: 24px 0 26px 0
+    display: inline-block
+    &:hover
+      background-color: $primaryRed
+      color: $regular-white
+      border: none
+      text-decoration: none
+  ul
+    padding: 0
+    li
+      list-style: none
+      border-bottom: 1px solid #E1E1E1
+      padding: 14px 0 14px 0
+      font-size: $smallFont
+      font-family: $font-family-primary
+
+//
+// contact-us section
+
+.contact-us
+  background-color: $primary-bgcolor
+  padding-top: 118px
+  padding-bottom: 84px
+  h4
+    @extend .h4-template
+    &:before
+      margin-left: 114px
+  p
+    @extend .short-description
+
+
+.input-group_contact
+  display: inline-block
+  margin-bottom: 50px
+  margin-right: 40px
+  position: relative
+  input
+    color: $primaryGrey
+    border: none
+    border-bottom: 2px solid $primaryRed
+    background: none
+    &:active
+      outline: none
+    &:focus
+      outline: none
+      + label
+        top: -13px
+        font-size: 9px
+        color: $grey-lighter
+
+  label
+    position: absolute
+    color: $primaryGrey
+    top: -1%
+    //@include transform(-8%)
+    font:
+      style: italic
+      family: $font-roboto-light
+      size: $smallestFont
+    pointer-events: none
+    transition: 0.3s ease
+    @include letter-space(1px)
+
+
+.active-stuff
+  + label
+    top: -13px
+    font-size: 9px
+
+.text-space
+  textarea
+    width: 500px
+    height: 220px
+    resize: none
+    color: $primaryGrey
+    padding: 22px 0 0 15px
+    border: 2px solid $border-color
+    &:focus
+      outline: none
+      box-shadow: 0 0 10px 0 #D5D5D5
+    @media only screen and (max-width : 768px)
+      width: 445px
+    @media only screen and (max-width : 480px)
+      width: 100%
+
+.submit-space
+  button
+    width: 269px
+    height: 47px
+    color: $regular-white
+    background-color: $primaryRed
+    border: none
+    outline: none
+    margin-top: 25px
+    &:focus
+      outline: none
+    &:active
+      outline: none
+    &:hover
+      //transform: scale(1.1)
+      transition: all .2s ease-in-out
+      box-shadow: 0 0 17px -2px $primaryRed
+
+address
+  //margin-left: 100px
+  i
+    font-size: $secondaryFontSize !important
+    color: $primaryRed
+    margin-right: 27px
+  span
+    color: $primaryGrey
+    font-size: $primaryFontSize
+    font-family: $font-family-primary
+    display: inline-block
+
+.mail-info
+  margin: 35px 0 35px 0
+
+.location-info
+  display: flex
+  align-items: center
+
+//
+// footer
+
+footer
+  background-color: $primaryRed
+  color: $regular-white
+  font-family: $font-family-primary
+  font-size: 15px
+  p
+    padding: 33px 0 36px 0
+
+
+
+
+// Media quires
+//  @media only screen and (max-width : 768px)
+// @media only screen and (max-width : 480px)
+// @media only screen and (max-width : 320px)
+@media only screen and (max-width : 768px)
+  .mobile-margins
+    margin: 25px 0 0 177px
+
+  .flex-boxes
+    flex-direction: column
+
+  address
+    padding-top: 50px
+
+  .branding-box,
+  .app-design-box
+    margin: 20px 0 20px 0
+
+@media only screen and (max-width : 480px)
+  header
+    background-size: cover
+  .table-01
+    margin: 25px 0 0 0
+  .mobile-margins
+    margin: 0
+
+  .about,
+  .service,
+  .featured-work,
+  .best-services,
+  .stepping,
+  .portfolio,
+  .crew,
+  .blog,
+  .pricing-tables,
+  .contact-us
+    padding-top: 50px
+
+  .mobile-menu-wrapper
+    overflow: hidden
+    background-color: #B5B5B5
+    padding: 5px
+    box-shadow: 0 3px 6px 3px #979797
+    display: none
+
+  .opened
+    display: block
+
+  .menu
+    display: none
+    // mobile menu
+  .mobile-menu-wrapper
+    position: absolute
+    right: 15px
+
+  .mobile-nav
+    padding-top: 5px
+    margin-right: 20px
+
+  .mobile-menu
+    display: block
+    padding: 0
+    li
+      padding: 3px
+
+  .mobile-nav-toggle
+    float: right
+    margin-right: 15px
+    width: 50px
+    height: 50px
+    align-items: center
+    display: flex
+    span
+      display: block
+      width: 100%
+      height: 2px
+      //position: relative
+      background-color: #0E1013
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 2px
+        position: relative
+        background-color: #0E1013
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,opacity 0.1s ease-in-out 0.1s
+        top: 15px
+      &:after
+        content: ''
+        display: block
+        width: 100%
+        height: 2px
+        position: relative
+        background-color: #0E1013
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,opacity 0.1s ease-in-out 0.1s
+        top: -15px
+    &:hover
+      span
+        background-color: transparent
+        transition: .2s ease
+        &:before
+          transform: rotateZ(-135deg)
+          top: 0
+          transform-origin: center
+        &:after
+          transform: rotateZ(135deg)
+          top: 0
+          transform-origin: center
+
+  .featured-work
+    p
+      br
+        display: none
+
+  .box-01, .box-02, .box-03,
+  .hover-box
+    width: 100%
+
+
+  address
+    margin-bottom: 0
+
+
+
+@media only screen and (max-width : 375px)
+  //.hover-box
+  //  width: 333px
+  //.box-01, .box-02, .box-03
+  //  width: 360px
+  //.text-space textarea
+  //  width: 356px
+
+  //.portfolio-menu
+  //  li
+  //    &:first-child
+  //     &:before
+  //      top: 22px
+
+
+@media only screen and (max-width : 320px)
+  .design-box .design_icon
+    width: 70px
+    height: 70px
+    line-height: 70px
+
+  .design-box,
+  .branding-box,
+  .app-design-box,
+  .print-design-box
+    padding: 20px
+
+  //.box-01,
+  //.box-02,
+  //.box-03,
+  //.hover-box,
+  .text-space textarea
+    width: 100%
+
+  .input-group_contact
+    .email-add
+      top: 16%

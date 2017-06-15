@@ -1,0 +1,44 @@
+
+@mixin letter-space ($spacing)
+  letter-spacing: $spacing
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+@mixin line-height ($height)
+  line-height: $height
+
+// you should include transform: scale and translateX as well, because in your main.sass you use them and they are not set as mixins here
+
+@mixin transform-translateY ($transform)
+  transform: translateY($transform)
+  -moz-transform: translateY($transform)
+    -o-transform: translateY($transform)
+    -ms-transform: translateY($transform)
+  -webkit-transform: translateY($transform)
+
+@mixin box-shadow($top, $right, $blur, $color)
+  -webkit-box-shadow: $top, $right, $blur, $color
+  -moz-box-shadow: $top, $right, $blur, $color
+  box-shadow: $top, $right, $blur, $color
+
+
+@mixin first-child()
+  &:first-of-type
+    @content
+
+
+
+
+
+
+
+
+
+
+
+
+
