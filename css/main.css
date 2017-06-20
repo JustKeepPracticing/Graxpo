@@ -9105,7 +9105,8 @@ footer {
   background-color: #E84C3D;
   color: #FFFFFF;
   font-family: "sans-regular";
-  font-size: 15px; }
+  font-size: 15px;
+  overflow: hidden; }
   footer p {
     padding: 33px 0 36px 0; }
 
